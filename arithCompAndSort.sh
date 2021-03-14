@@ -23,3 +23,30 @@ CompArray[2]=${Computation[cal3]}
 CompArray[3]=${Computation[cal4]}
 
 echo "Array of arithmetic computations: ["${CompArray[@]}"]"
+
+for ((i=0; i <= $((${#CompArray[@]} - 2)); ++i))
+do
+	for ((j=((i + 1)); j <= ((${#CompArray[@]} - 1)); ++j))
+   do
+     if [[ ${CompArray[i]} -gt ${CompArray[j]} ]]
+     then
+     	#echo $i $j ${CompArray[i]} ${CompArray[j]}
+      tmp=${CompArray[i]}
+      CompArray[i]=${CompArray[j]}
+     	CompArray[j]=$tmp         
+	  fi
+	done
+done
+
+count=0
+
+i=3
+
+while [ $i -ge 0 ]
+do
+	DescendingArray[$count]=${CompArray[i]}
+	((count++))
+	((i--))
+done
+
+echo "Descending order of reult array: ["${DescendingArray[@]}"]"
