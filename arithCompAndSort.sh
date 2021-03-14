@@ -1,6 +1,7 @@
 #! /bash/bin -x
 
 declare -A Computation
+declare -a CompArray
 
 read -p "Enter any 3 numbers: " a b c
 
@@ -15,3 +16,10 @@ Computation[cal3]=$cal3
 Computation[cal4]=$cal4
 
 echo "Dictionary of arithmetic computations: ["${!Computation[@]}"] : ["${Computation[@]}"]"
+
+CompArray[0]=${Computation[cal1]}
+CompArray[1]=${Computation[cal2]}
+CompArray[2]=${Computation[cal3]}
+CompArray[3]=${Computation[cal4]}
+
+echo "Array of arithmetic computations: ["${CompArray[@]}"]"
