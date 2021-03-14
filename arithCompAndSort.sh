@@ -7,4 +7,7 @@ cal2=$(($a * $b + $c))
 cal3=$(($c + $a / $b))
 cal4=$(($a % $b + $c))
 
-echo $ca1 $cal2 $cal3 $cal4
+echo $ca1
+echo $cal2
+echo $cal3 
+echo $cal4
