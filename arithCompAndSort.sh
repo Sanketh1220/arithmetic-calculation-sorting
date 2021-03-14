@@ -38,6 +38,8 @@ do
 	done
 done
 
+echo "Ascending order of result: ["${CompArray[@]}"]"
+
 count=0
 
 i=3
